@@ -93,7 +93,7 @@ public class CreditAccountTest {
     //}
 
     @Test
-    public void testConstructor_WithPositiveValue() {
+    public void testConstructor_WithPositiveValues() {
         int initialBalance = 1000;
         int creditLimit = 1000;
         int rate = 5;
@@ -265,4 +265,17 @@ public class CreditAccountTest {
         Assertions.assertEquals(false, result);
         Assertions.assertEquals(0, creditAccount.getBalance());
     }
+
+    @Test
+    void getCreditLimitTest() {
+        CreditAccount account = new CreditAccount(
+                200,
+                5_000,
+                15
+        );
+
+        int expectation = 5_000;
+        Assertions.assertEquals(expectation, account.getCreditLimit());
+    }
+
 }
