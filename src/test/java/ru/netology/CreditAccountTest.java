@@ -202,37 +202,37 @@ public class CreditAccountTest {
 
     @Test
     public void shouldCalculatedInterestWithPositiveBalance() {
-        CreditAccount creditAccount = new CreditAccount(
+        CreditAccount account = new CreditAccount(
                 1_000,
                 5_000,
                 15
         );
 
-        int result = creditAccount.yearChange();
+        int result = account.yearChange();
 
         Assertions.assertEquals(0, result);
     }
-    //@Test
-    //public void shouldCalculatedInterestWithNegativeBalance() {
-    //    CreditAccount creditAccount = new CreditAccount(
-    //            -1_000,
-    //            5_000,
-    //            15
-    //    );
+    @Test
+    public void shouldCalculatedInterestWithNegativeBalance() {
+        CreditAccount account = new CreditAccount(
+                1_000,
+                5_000,
+                15
+        );
 
-    //    int result = creditAccount.yearChange();
-
-    //    Assertions.assertEquals(150, result);
-    //}
+        int expected = -150;
+        account.pay(2_000);
+        Assertions.assertEquals(expected, account.yearChange());
+    }
     @Test
     public void shouldCalculatedInterestWithZeroBalance() {
-        CreditAccount creditAccount = new CreditAccount(
+        CreditAccount account = new CreditAccount(
                 0,
                 5_000,
                 15
         );
 
-        int result = creditAccount.yearChange();
+        int result = account.yearChange();
 
         Assertions.assertEquals(0, result);
     }
@@ -276,6 +276,18 @@ public class CreditAccountTest {
 
         int expectation = 5_000;
         Assertions.assertEquals(expectation, account.getCreditLimit());
+    }
+
+    @Test
+    void getRateTest() {
+        CreditAccount account = new CreditAccount(
+                200,
+                5_000,
+                15
+        );
+
+        int expectation = 15;
+        Assertions.assertEquals(expectation, account.getRate());
     }
 
 }
