@@ -244,5 +244,4 @@ public class CreditAccountTest {
         Assertions.assertEquals(false, result);
         Assertions.assertEquals(0, creditAccount.getBalance());
     }
-
 }
