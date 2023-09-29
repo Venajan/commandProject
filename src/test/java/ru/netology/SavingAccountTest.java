@@ -231,6 +231,42 @@ public class SavingAccountTest {
         );
     }
 
+    @Test
+    public void shouldNegativeInitialBalance() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+                    SavingAccount account = new SavingAccount(
+                            -2_000,
+                            1_000,
+                            10_000,
+                            5);
+                }
+        );
+    }
+
+    @Test
+    public void shouldNegativeMinBalance() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+                    SavingAccount account = new SavingAccount(
+                            2_000,
+                            -1_000,
+                            10_000,
+                            5);
+                }
+        );
+    }
+
+    @Test
+    public void shouldNegativeMaxBalance() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+                    SavingAccount account = new SavingAccount(
+                            2_000,
+                            1_000,
+                            -10_000,
+                            5);
+                }
+        );
+    }
+
     //Расчет % на остаток
     @Test
     public void shouldCalculateOfPercentOnYearChange() {
