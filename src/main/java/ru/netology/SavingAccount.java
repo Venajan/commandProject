@@ -35,27 +35,27 @@ public class SavingAccount extends Account {
 
         if (maxBalance < 0) {
             throw new IllegalArgumentException(
-                    "Минимальный баланс не может быть отрицательным, а у вас: " + maxBalance
+                    "Максимальный баланс не может быть отрицательным, а у вас: " + maxBalance
             );
         }
 
         if (initialBalance < 0) {
             throw new IllegalArgumentException(
-                    "Минимальный баланс не может быть отрицательным, а у вас: " + initialBalance
+                    "Начальный баланс не может быть отрицательным, а у вас: " + initialBalance
             );
         }
 
         if (minBalance > maxBalance) {
             throw new IllegalArgumentException(
-                    "Допустимое значение минимального баланса " + "не может быть больше максимального" +
-                            ", а у вас допустимые минимальное значение: "
+                    "Минимальный баланс " + "не может быть больше максимального" +
+                            ", а у вас допустимое минимальное значение: "
                             + minBalance + "и максимальное: " + maxBalance
             );
         }
 
         if (minBalance > initialBalance) {
             throw new IllegalArgumentException(
-                    "Допустимое значение минимального баланса не может быть больше начального" +
+                    "Минимальный баланс не может быть больше начального" +
                             ", а у вас допустимое минимальное значение: "
                             + minBalance + "и начальное: " + initialBalance
             );
@@ -63,7 +63,7 @@ public class SavingAccount extends Account {
 
         if (maxBalance < initialBalance) {
             throw new IllegalArgumentException(
-                    "Допустимое значение максимального баланса не может быть меньше начального" +
+                    "Максимальный баланс не может быть меньше начального" +
                             ", а у вас допустимое максимальное значение: "
                             + maxBalance + "и начальное: " + initialBalance
             );

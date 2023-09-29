@@ -231,6 +231,7 @@ public class SavingAccountTest {
         );
     }
 
+    //Отрицательный начальный баланс
     @Test
     public void shouldNegativeInitialBalance() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -243,6 +244,7 @@ public class SavingAccountTest {
         );
     }
 
+    //Отрицательный минимальный баланс
     @Test
     public void shouldNegativeMinBalance() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -255,6 +257,7 @@ public class SavingAccountTest {
         );
     }
 
+    //Отрицательный максимальный баланс
     @Test
     public void shouldNegativeMaxBalance() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
