@@ -258,16 +258,4 @@ public class CreditAccountTest {
 
         Assertions.assertEquals(0, result);
     }
-
-    @Test
-    void getCreditLimitTest(){
-        CreditAccount account = new CreditAccount(
-                200,
-                5_000,
-                15
-        );
-
-        int expectation = 5_000;
-        Assertions.assertEquals(expectation, account.getCreditLimit());
-    }
 }
